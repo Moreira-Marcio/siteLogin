@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Site Protótipo</title>
+    <link rel="stylesheet" href="login.css" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+  </head>
+  <body>
+    <div class="cartao-login">
+      <header class="cabecalho-login">
+        <h1>Entrar</h1>
+        <p>Acesse sua conta para continuar</p>
+      </header>
+
+      <section class="autenticacao-google">
+        <div
+          id="g_id_onload"
+          data-client_id="meu-site-prototipo"
+          data-context="signin"
+          data-ux_mode="popup"
+          data-callback="processarLoginGoogle"
+          data-auto_prompt="false"
+        ></div>
+
+        <div
+          class="g_id_signin"
+          data-type="standard"
+          data-shape="rectangular"
+          data-theme="outline"
+          data-text="signin_with"
+          data-size="large"
+          data-logo_alignment="left"
+          data-width="100%"
+        ></div>
+      </section>
+
+      <div class="divisor">
+        <span>ou use e-mail</span>
+      </div>
+
+      <form id="formulario-login">
+        <div class="grupo-entrada">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            id="email"
+            placeholder="exemplo@email.com"
+            required
+          />
+        </div>
+
+        <div class="grupo-entrada">
+          <label for="senha">Senha</label>
+          <input type="password" id="senha" placeholder="Sua senha" required />
+        </div>
+
+        <button type="submit" class="botao-acessar">Entrar</button>
+
+        <div class="links-auxiliares">
+          <a href="#">Esqueceu a senha?</a>
+          <p>Não tem conta? <a href="cadastro.html">Cadastre-se</a></p>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      // Função chamada pelo Google após login bem-sucedido
+      function processarLoginGoogle(resposta) {
+        console.log("Token JWT recebido:", resposta.credential);
+        alert("Login via Google realizado! Redirecionando...");
+        // Aqui você redirecionaria para a home: window.location.href = "index.html";
+      }
+
+      document
+        .getElementById("formulario-login")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Tentativa de login manual capturada!");
+        });
+    </script>
+  </body>
+</html>
