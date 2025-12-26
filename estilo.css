@@ -1,0 +1,320 @@
+:root {
+  --primary-color: #2563eb;
+  --primary-hover: #1d4ed8;
+  --bg-color: #f8fafc;
+  --card-bg: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: #e2e8f0;
+  --success-color: #10b981;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header & Navegação */
+header {
+  background-color: var(--card-bg);
+  padding: 2rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow);
+}
+
+header h1 {
+  font-size: 2.25rem;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.navegacao ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navegacao li {
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.navegacao li:hover {
+  color: var(--primary-color);
+}
+
+/* Conteúdo Principal */
+.conteudo-principal {
+  flex: 1;
+  max-width: 1000px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.titulo-secao {
+  text-align: center;
+  font-size: 1.875rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.titulo-secao::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 4px;
+  background: var(--primary-color);
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+/* Grade de Cadastro */
+.grade-cadastro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+section.coluna-manual,
+section.coluna-social {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+}
+
+h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  color: var(--text-main);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.75rem;
+}
+
+/* Formulário */
+.campo-entrada {
+  margin-bottom: 1.25rem;
+}
+
+.campo-entrada label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-main);
+}
+
+.campo-entrada input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.campo-entrada input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.botao-cadastrar {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.botao-cadastrar:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Coluna Social */
+.coluna-social p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.g_id_signin {
+  display: flex;
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  border-top: 1px solid var(--border-color);
+  background: var(--card-bg);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .grade-cadastro {
+    grid-template-columns: 1fr;
+  }
+
+  header h1 {
+    font-size: 1.75rem;
+  }
+
+  .navegacao ul {
+    gap: 1rem;
+  }
+}
+
+/* pagina login */
+
+/* Estilo Base */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #eef2f3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Cartão de Login */
+.cartao-login {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.cabecalho-login {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.cabecalho-login h1 {
+  margin: 0;
+  color: #333;
+}
+
+.cabecalho-login p {
+  color: #777;
+  font-size: 14px;
+}
+
+/* Divisor Visual */
+.divisor {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 20px 0;
+  color: #bbb;
+}
+
+.divisor::before,
+.divisor::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #eee;
+}
+
+.divisor span {
+  padding: 0 10px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+/* Campos de Formulário */
+.grupo-entrada {
+  margin-bottom: 20px;
+}
+
+.grupo-entrada label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #555;
+}
+
+.grupo-entrada input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+  outline-color: #4285f4;
+}
+
+/* Botões */
+.botao-acessar {
+  width: 100%;
+  padding: 12px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.botao-acessar:hover {
+  background-color: #357ae8;
+}
+
+/* Links */
+.links-auxiliares {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.links-auxiliares a {
+  color: #4285f4;
+  text-decoration: none;
+}
+
+.links-auxiliares a:hover {
+  text-decoration: underline;
+}
