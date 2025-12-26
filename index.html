@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Lgin</title>
+    <title>Cadastro - Site Protótipo</title>
+
+    <link rel="stylesheet" href="estilo.css" />
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
   </head>
   <body>
     <header>
-      <h1>site prototipo</h1>
-      <p>estrutura inicial</p>
-      <button>Enviar</button>
+      <h1>Site Protótipo</h1>
+      <p>Estrutura Inicial</p>
 
-      <section>
-        <h2>cabecalho</h2>
+      <section class="navegacao">
         <ul>
           <li>index</li>
           <li>quem somos</li>
@@ -20,14 +22,75 @@
         </ul>
       </section>
     </header>
-    <section>
-      <h2>
-        <p>formulario</p>
-      </h2>
-    </section>
+
+    <main class="conteudo-principal">
+      <h2 class="titulo-secao">Crie sua conta</h2>
+
+      <div class="grade-cadastro">
+        <section class="coluna-manual">
+          <h3>Cadastro Tradicional</h3>
+          <form id="formulario-registro">
+            <div class="campo-entrada">
+              <label for="nome">Nome:</label>
+              <input type="text" id="nome" required />
+            </div>
+            <div class="campo-entrada">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" required />
+            </div>
+            <div class="campo-entrada">
+              <label for="senha">Senha:</label>
+              <input type="password" id="senha" required />
+            </div>
+            <button type="submit" class="botao-cadastrar">
+              Cadastrar Agora
+            </button>
+          </form>
+        </section>
+
+        <section class="coluna-social">
+          <h3>Acesso Rápido</h3>
+          <p>Use sua conta do Google para entrar instantaneamente.</p>
+
+          <div
+            id="g_id_onload"
+            data-client_id="SEU_ID_DO_CLIENTE.apps.googleusercontent.com"
+            data-context="signup"
+            data-ux_mode="popup"
+            data-callback="lidarComRespostaGoogle"
+            data-auto_prompt="false"
+          ></div>
+
+          <div
+            class="g_id_signin"
+            data-type="standard"
+            data-shape="rectangular"
+            data-theme="outline"
+            data-text="signup_with"
+            data-size="large"
+          ></div>
+        </section>
+      </div>
+    </main>
 
     <footer>
-      <p>&copy;2025 - direitos resrvados</p>
+      <p>&copy;2025 - Direitos Reservados</p>
     </footer>
+
+    <script>
+      // Função para resposta do Google
+      function lidarComRespostaGoogle(response) {
+        alert("Sucesso no Google! Token recebido.");
+        console.log(response.credential);
+      }
+
+      // Lógica do formulário manual
+      document
+        .getElementById("formulario-registro")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          alert("Cadastro manual enviado com sucesso!");
+        });
+    </script>
   </body>
 </html>
